@@ -1,0 +1,9 @@
+var footerText = "Data presented in this screen is automatically generated from defects and test databases and should be used for rough Program Status assessment. Some figures my slightly differ from the official SWQA dashboard slides.";
+var datetime = "06/19/2020, 11:05:52";
+var frameIdVar = [""];
+var frameConfigArray = [""];
+var frameTimeoutArray = [""];
+var moduleTypesPerPage = '{}';
+var moduleLocationsPerPage = '{}';
+var moduleConfigsPerPage = '{}';
+var moduleDatasPerPage = '{}';

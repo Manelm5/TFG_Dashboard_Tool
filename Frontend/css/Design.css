@@ -1,0 +1,449 @@
+html, body, .Main_container { height: 100%; margin: 0; }
+
+.Main_container *:after {
+ top: 0;
+ left: 0;
+}
+
+.Main_container {
+  display: grid;
+  grid-template-columns: 50fr;
+  grid-template-rows: 10fr 1fr;
+  grid-template-areas: "Main_Structure" "Footer";
+  background-color: black;
+  size: 100px;
+}
+
+/*centering the content of all grid displays*/
+.Main_container > div {
+  display:flex;
+  font-family: 'Arial';
+}
+
+
+.Main_Structure { grid-area: Main_Structure; }
+
+.Footer {
+    grid-area: Footer;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+    height: 50px;  
+}
+
+.FooterText {
+  /* Starting position */
+  -moz-transform:translateX(100%);
+  -webkit-transform:translateX(100%);
+  transform:translateX(100%);
+  /* Apply animation to this element */
+  -moz-animation: Footer 30s linear infinite;
+  -webkit-animation: Footer 30s linear infinite;
+  animation: Footer 30s linear infinite;
+
+  font-size: 36px;
+  white-space: nowrap;
+}
+
+/* Move it (define the animation) */
+@-moz-keyframes Footer {
+    0%   { -moz-transform: translateX(100%); }
+    100% { -moz-transform: translateX(-100%); }
+}
+@-webkit-keyframes Footer {
+    0%   { -webkit-transform: translateX(100%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+@keyframes Footer {
+    0% {
+        -moz-transform: translateX(100%); /* Firefox bug fix */
+        -webkit-transform: translateX(100%); /* Firefox bug fix */
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%); /* Firefox bug fix */
+        -webkit-transform: translateX(-100%); /* Firefox bug fix */
+        transform: translateX(-100%);
+    }
+}
+
+/* -------------------------------------------------------/*
+/* SINGLE MODULE DESIGN */
+
+.SingleModule_Container
+{
+  height: 100%; margin: 0;
+  width: 100%;
+}
+
+.SingleModule_Container * {
+ /*border: 1px solid red;*/
+}
+
+.SingleModule_Container *:after {
+ /*content:attr(class);*/
+ top: 0;
+ left: 0;
+}
+
+.SingleModule_Container {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 1fr 0.1fr 1.4fr 1.4fr 0.1fr 1.4fr 1.4fr 0.1fr;
+  grid-template-rows: 0.1fr 0.6fr 0.1fr 1fr 1fr 1fr 0.1fr 1fr 1fr 1fr 0.1fr 1fr 0.1fr;
+  grid-template-areas:
+  ". . . . . . . . . ."
+  ". Name_display Name_display . Date_display Date_display . . Logo_display ."
+  ". . . . . . . . . ."
+  ". Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 ."
+  ". Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 ."
+  ". Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 ."
+  ". Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 ."
+  ". Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 ."
+  ". Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 ."
+  ". Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 ."
+  ". Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 ."
+  ". Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 Module_1 ."
+  ". . . . . . . . . .";
+  font-size: 40px; /* default text size; used to make responsive charts with differents displays */
+}
+
+/*centering the content of all grid displays*/
+.SingleModule_Container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial';
+}
+
+.Module_1 { grid-area: Module_1; }
+
+/* ------------------------------------------------------------------- */
+/* FOUR MODULE DESIGN */
+
+.FourModule_Container { height: 100%; margin: 0; width: 100%; }
+
+.FourModule_Container *:after {
+  top: 0;
+  left: 0;
+}
+
+.FourModule_Container {
+  display: grid;
+  grid-template-columns: 0.1fr 1.25fr 0.5fr 1.25fr 0.1fr 2fr 1fr 0.2fr;
+  grid-template-rows: 0.1fr 0.6fr 0.1fr 1fr 1fr 1fr 0.1fr 1fr 1fr 1fr 0.1fr;
+  grid-template-areas:
+  ". . . . . . . ."
+  ". Name_display . Date_display . . Logo_display ."
+  ". . . . . . . ."
+  ". Module_1_1 Module_1_1 Module_1_1 . Module_1_2 Module_1_2 ."
+  ". Module_1_1 Module_1_1 Module_1_1 . Module_1_2 Module_1_2 ."
+  ". Module_1_1 Module_1_1 Module_1_1 . Module_1_2 Module_1_2 ."
+  ". . . . . . . ."
+  ". Module_2_1 Module_2_1 Module_2_1 . Module_2_2 Module_2_2 ."
+  ". Module_2_1 Module_2_1 Module_2_1 . Module_2_2 Module_2_2 ."
+  ". Module_2_1 Module_2_1 Module_2_1 . Module_2_2 Module_2_2 ."
+  ". . . . . . . .";
+  font-size: 26px; /* default text size; used to make responsive charts with differents displays */
+}
+
+/*centering the content of all grid displays*/
+.FourModule_Container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial';
+}
+
+.Module_1_1 { grid-area: Module_1_1; }
+
+.Module_1_2 { grid-area: Module_1_2; }
+
+.Module_2_1 { grid-area: Module_2_1; }
+
+.Module_2_2 { grid-area: Module_2_2; }
+
+/* ----------------------- */
+/* SHARED DIVS ON DIFFERENT CONTAINERS */
+
+.Name_display {
+  grid-area: Name_display;
+  font-size: 50px;
+  font-family: 'Arial';
+  align-items: center;
+  color: white;
+}
+
+.Date_display {
+  grid-area: Date_display;
+  font-size: 24px;
+  font-family: 'Arial';
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.Logo_display {
+  grid-area: Logo_display;
+  align-items: center;
+  background-image: url('../images/hpLogo.png');
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  right: 2920px;
+}
+
+
+/* -------------------------- */
+/* SONARQUBE MODULE PLUGIN */
+
+.sq-container { height: 100%; margin: 0; }
+
+.sq-container * { 
+ position: relative;
+}
+
+.sq-container *:after { 
+ top: 0;
+ left: 0;
+}
+
+.sq-container {
+  display: grid;
+  grid-template-columns: 0.1fr 1fr 2fr 1fr 0.1fr 1fr 2fr 1fr 0.1fr;
+  grid-template-rows: 0.1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: ". . . . . . . . ." 
+  ". Project_Name Project_Name Project_Name Project_Name Project_Name . . ." 
+  ". . N_Bugs . . . N_Vulnerabilities . ." 
+  ". . N_Bugs . . . N_Vulnerabilities . ." 
+  ". . Bugs_Text . . . Vulnerabilities_Text . ." 
+  ". . N_CS . . . N_Cov . ." 
+  ". . N_CS . . . N_Cov . ." 
+  ". . CS_Text . . . Cov_Text . .";
+  width: 100%;
+}
+
+/*centering the content of all grid displays*/
+.sq-container > div {
+  display: flex;
+  justify-content: center;
+  font-family: 'Arial';
+}
+
+.Project_Name { 
+  grid-area: Project_Name; 
+  align-items: left;  
+  align-items: center;
+  color: white;
+  background-color: blue;
+}
+
+.N_Bugs { 
+  grid-area: N_Bugs; 
+  font-size: 60px;
+  color: white;
+  align-items: flex-end;
+}
+
+.Bugs_Text { 
+  grid-area: Bugs_Text;
+  color: deepskyblue; 
+}
+
+.N_Vulnerabilities { 
+  grid-area: N_Vulnerabilities; 
+  font-size: 60px;
+  color: white;
+  align-items: flex-end;
+}
+
+.Vulnerabilities_Text { 
+  grid-area: Vulnerabilities_Text;
+  color: deepskyblue;
+}
+
+.N_CS { 
+  grid-area: N_CS; 
+  font-size: 60px;
+  color: white;
+  align-items: flex-end;
+}
+
+.CS_Text { 
+  grid-area: CS_Text;
+  color: deepskyblue;
+}
+
+.N_Cov { 
+  grid-area: N_Cov; 
+  font-size: 60px;
+  color: white;
+  align-items: flex-end;
+}
+
+.Cov_Text { 
+  grid-area: Cov_Text;
+  color: deepskyblue; 
+}
+
+/* --------------------- */
+/* SONARQUB TABLE PLUGIN */
+
+#SonarQubeTable {
+  color: white;
+  width: 100%;
+  height: 50%;
+  text-align: center;
+  justify-content: center;
+  border-collapse: collapse;
+}
+
+td {
+  border-collapse: collapse;
+}
+
+.team_name {
+  text-align: left;
+  justify-content: left;
+}
+
+th {
+  background-color: #000000;
+  color: white;
+}
+
+#SonarQubeTable tr:nth-child(even) {
+    background-color: #0000FF;
+}
+
+
+/* ----------------------------------*/
+/* INCOMING_RELEASES TABLE PLUGIN */
+
+#IncomingReleasesTable {
+  color: white;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  justify-content: center;
+  border-collapse: collapse;
+  font-size: 40px;
+
+}
+
+#IncomingReleasesTable #row {
+  background-color: #0000FF;
+}
+
+
+#Name {
+  color:white;
+}
+
+#IncomingReleasesTable caption {
+  font-size:16px;
+}
+
+
+/* -----------------------------------------------------------*/
+
+.ThreeModule_Container { height: 100%; margin: 0; width: 100%;}
+
+.ThreeModule_Container *:after { 
+ top: 0;
+ left: 0;
+}
+
+.ThreeModule_Container {
+  display: grid;
+  grid-template-columns: 0.1fr 1.25fr 0.5fr 1.25fr 0.1fr 2fr 1fr 0.2fr;
+  grid-template-rows: 0.1fr 0.6fr 0.1fr 1fr 1fr 1fr 0.1fr 1fr 1fr 1fr 0.1fr;
+  grid-template-areas:
+    ". . . . . . . ."
+    ". Name_display . Date_display . . Logo_display ."
+    ". . . . . . . ."
+    ". Module_1_1 Module_1_1 Module_1_1 . Module_x_2 Module_x_2 ."
+    ". Module_1_1 Module_1_1 Module_1_1 . Module_x_2 Module_x_2 ."
+    ". Module_1_1 Module_1_1 Module_1_1 . Module_x_2 Module_x_2 ."
+    ". . . . . Module_x_2 Module_x_2 ."
+    ". Module_2_1 Module_2_1 Module_2_1 . Module_x_2 Module_x_2 ."
+    ". Module_2_1 Module_2_1 Module_2_1 . Module_x_2 Module_x_2 ."
+    ". Module_2_1 Module_2_1 Module_2_1 . Module_x_2 Module_x_2 ."
+    ". . . . . . . .";
+  /* font-size: 36px; */
+}
+
+.Name_display { grid-area: Name_display; }
+
+.Date_display { grid-area: Date_display; }
+
+.Logo_display { grid-area: Logo_display; }
+
+.Module_1_1 { grid-area: Module_1_1; }
+
+.Module_2_1 { grid-area: Module_2_1; }
+
+.Module_x_2 { grid-area: Module_x_2; }
+
+
+/*centering the content of all grid displays*/
+.ThreeModule_Container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial';
+}
+
+/* ADICT boxes design */
+
+    #box_content {
+    height: auto; /* si queremos que la altura se adapte al*/
+    width: auto;
+    display: grid;
+    grid-gap: 0.8em;
+    grid-area: adictbox_content;
+    grid-template-columns: repeat(4, 1fr);
+    }
+
+    #isLocked_content {
+      text-align: center;
+     }
+    
+    #testsuite_box {
+    display: grid;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    width: 1fr; /* equal box size for each box */
+    height: 1fr; /* equal box size for each box */
+    font-size: 0.8vw;
+    /* El box ha de adapatarse a nuestro div, a diferencia de la pagina de
+    Adict en el cual el height es variable */
+    }
+    
+    #adict_header {
+      width: 100%;
+      height: 100%;
+      height: 1em;
+      font-size: 1.3vw;
+    }
+
+  .adict-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1fr;
+  grid-template-areas:
+    "adictbox_header"
+    "adictbox_content";
+  width: 100%;
+  height: 90%;
+  color: white;
+  align-content: center;
+  font-size: 1.2vw; /* Sizes adapt 1.2vw to the <div> width */
+}
+
+.adictbox_header { grid-area: adictbox_header; }
+
+.adictbox_content { grid-area: adictbox_content; }
+

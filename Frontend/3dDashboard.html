@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+
+ <head>
+	 <title>Dashboard tool</title>
+
+	 <link rel="stylesheet" type="text/css" href="css/Design.css">
+	 <link rel="stylesheet" type="text/css" href="css/SWQA.css">
+
+	 <script type="application/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+  	 <script src="js/3dDashboard.js"></script>
+  	 <script src="js/3dDBdata.js"></script>
+  	 <script src="js/3dDBfunctions.js"></script>
+  	 <script src="js/common/js/common3dDBdata.js"
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	 <meta name="google" content="notranslate">
+	 
+	 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	 <meta http-equiv="Pragma" content="no-cache">
+	 <meta http-equiv="Expires" content="0">
+
+     <script>
+
+     	/* SWQA parsed vars */
+
+ 		var programs = JSON.parse(programsData);
+		var statusByProgram = JSON.parse(statusData);
+		var timeStamps = JSON.parse(timeData);
+		var foundFixed = JSON.parse(defectFoundFixedData);
+		var trends = JSON.parse(defectsTrendData);
+		var catalogs = JSON.parse(catalogStatusData);
+		var teams = JSON.parse(defectsByTeamData);
+		var openLog = JSON.parse(openLogData);
+
+		/* 3D parsed vars */
+		var TypesPerPage = JSON.parse(moduleTypesPerPage);
+		var LocationsPerPage = JSON.parse(moduleLocationsPerPage);       
+		var ConfigsPerPage = JSON.parse(moduleConfigsPerPage);
+
+		var DataPerPage = JSON.parse(moduleDatasPerPage);	
+
+
+		// Load the Visualization API and the core chart package.
+		google.charts.load('current', {'packages':['corechart']});
+		// Set a callback to run when the Google Visualization API is loaded.
+		google.charts.setOnLoadCallback(drawCharts);
+
+	</script>
+ </head>
+
+ <body onload="setToRefresh()">
+
+	<div class="Main_container">
+		 <div id="Main_Structure" class="Main_Structure"></div> 
+		 <div id="Footer" class="Footer"></div>
+
+	</div>
+
+	<script type="text/javascript">  document.getElementById("Footer").innerHTML = '<span class="FooterText">' + footerText + '</span>';</script>
+
+ </body>
+
+</html>

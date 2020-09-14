@@ -1,0 +1,165 @@
+.SWQA_Container {
+  height: 100%; margin: 0;
+  background-color: black;
+
+}
+
+.SWQA_Container *:after {
+  top: 0;
+  left: 0;
+}
+.SWQA_Container {
+ display: grid;
+  grid-template-columns: 0.1fr 1.2fr 0.01fr 3fr 0.01fr 1.5fr 1.5fr 0.2fr;
+  grid-template-rows: 0.1fr 0.6fr 0.1fr 3fr 0.01fr 3fr 0.05fr;
+  grid-template-areas:
+  ". . . . . . . ."
+  ". SWQA_Name_display . SWQA_Date_display . . SWQA_Logo_display ."
+  ". . . . . . . ."
+  ". FreeSpace_display . Module1_display . Module2_display Module2_display ."
+  ". . . . . . . ."
+  ". Info_display . Module3_display . Module4_display Module4_display ."
+  ". . . . . . . .";
+  width: 100%;
+
+}
+
+/*centering the content of all grid displays*/
+.SWQA_Container > div {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial';
+  color: white;
+
+
+}
+
+.Module1_display { grid-area: Module1_display; }
+
+.Module2_display { grid-area: Module2_display; }
+
+.Module3_display { grid-area: Module3_display; }
+
+.Module4_display { grid-area: Module4_display; }
+
+.Info_display { grid-area: Info_display; }
+
+.FreeSpace_display { grid-area: FreeSpace_display; }
+
+/* A chart grid container specially designed to be responsive on different displays.*/
+.FiveChart_Container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "total metricNumber_1 metricNumber_1 metricNumber_1"
+  "aboveRC metricNumber_2 metricNumber_2 metricNumber_2"
+  "belowRC metricNumber_3 metricNumber_3 metricNumber_3"
+  "deferred metricNumber_4 metricNumber_4 metricNumber_4"
+  "maturity metricNumber_5 metricNumber_5 metricNumber_5";
+}
+
+.metricNumber_1 { grid-area: metricNumber_1; }
+
+.metricNumber_2 { grid-area: metricNumber_2; }
+
+.metricNumber_3 { grid-area: metricNumber_3; }
+
+.metricNumber_4 { grid-area: metricNumber_4; }
+
+.metricNumber_5 { grid-area: metricNumber_5; }
+
+
+.total {
+  grid-area: total;
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+
+  color: #BBBBBB;
+  font-size: 26px;
+  padding: 25px;
+}
+
+.aboveRC {
+  grid-area: aboveRC;
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+
+  color: red;
+  font-size: 26px;
+  padding: 25px;
+}
+
+.belowRC {
+  grid-area: belowRC;
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+
+  color: blue;
+  font-size: 26px;
+  padding: 25px;
+}
+
+.deferred {
+  grid-area: deferred;
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+
+  color: yellow;
+  font-size: 26px;
+  padding: 25px;
+}
+
+.maturity {
+  grid-area: maturity;
+  display: flex;
+  text-align: center;
+  justify-content: flex-end;
+
+  color: #BB00BB;
+  font-size: 26px;
+  padding: 25px;
+  visibility:hidden;
+}
+
+#metricNumber {
+  font-size: 26px;
+  color:#999999;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 25px;
+
+}
+
+.SWQA_Name_display {
+  grid-area: SWQA_Name_display;
+  font-size: 50px;
+  font-family: 'Arial';
+  align-items: center;
+  color: white;
+}
+
+.SWQA_Date_display {
+  grid-area: SWQA_Date_display;
+  font-size: 20px;
+  font-family: 'Arial';
+  align-items: center;
+  color: white;
+}
+
+.SWQA_Logo_display {
+  grid-area: SWQA_Logo_display;
+  align-items: center;
+  background-image: url('../images/hpLogo.png');
+  width: 60px;
+  height: 60px;
+  background-size: 60px 60px;
+  right: 2920px;
+  top: 20px;
+}

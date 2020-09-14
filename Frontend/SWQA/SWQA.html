@@ -1,0 +1,58 @@
+
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="../css/SWQA.css">
+
+  <script type="application/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="../js/3dDashboard.js"></script>
+  <script src="../js/SWQA.js"></script>
+
+
+<script>
+ var programs = JSON.parse(programsData);
+ var statusByProgram = JSON.parse(statusData);
+ var timeStamps = JSON.parse(timeData);
+ var foundFixed = JSON.parse(defectFoundFixedData);
+ var trends = JSON.parse(defectsTrendData);
+ var catalogs = JSON.parse(catalogStatusData);
+ var teams = JSON.parse(defectsByTeamData);
+ var openLog = JSON.parse(openLogData);
+
+
+  // Load the Visualization API and the core chart package.
+  google.charts.load('current', {'packages':['corechart']});
+  // Set a callback to run when the Google Visualization API is loaded.
+  google.charts.setOnLoadCallback(drawCharts);
+</script>
+
+</head>
+
+<body onload="setToRefresh()" onclick="switchAndHold()" onerror="reloadData()">
+<div class="SWQA_Container">
+  <div id ="SWQA_Name_display" class="SWQA_Name_display"> Updating...</div>
+  <div id="SWQA_Date_display" class="SWQA_Date_display"></div>
+  <div id="SWQA_Logo_display" class="SWQA_Logo_display"></div>
+  <div id="Module1_display" class="Module1_display"></div>
+  <div id="Module2_display" class="Module2_display"></div>
+  <div id="Module3_display" class="Module3_display"></div>
+  <div id="Module4_display" class="Module4_display"></div>
+  <div class="Info_display">
+      <div class="FiveChart_Container">
+			  <div id = "totalTd" class="total">...</div>
+			  <div id = "aboveRcTd" class="aboveRC">...</div>
+			  <div id = "belowRcTd" class="belowRC">...</div>
+			  <div id = "deferredTd" class="deferred">...</div>
+			  <div id = "smiTd"  class="maturity">...</div>
+			  <div id= metricNumber class="metricNumber_1"> Defects </div>
+			  <div id= metricNumber class="metricNumber_2"> Above RC </div>
+			  <div id= metricNumber class="metricNumber_3"> Below RC </div>
+			  <div id= metricNumber class="metricNumber_4"> Deferred </div>
+			  <div id= metricNumber class="metricNumber_5"></div>
+			</div>
+  </div>
+  <div class="FreeSpace_display"></div>
+</div>
+</body>
+</html>

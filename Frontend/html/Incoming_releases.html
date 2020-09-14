@@ -1,0 +1,100 @@
+
+<style>
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 4px white;
+  text-align: center;
+  color: white;
+  padding: 6px;
+  font-size: 30px;
+}
+
+
+th {
+  background-color: #000000;
+  color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #0000FF;
+}
+
+#text {
+ color:white; 
+}
+</style>
+
+
+<script src="../js/common/js/common3dDBdata.js"></script>
+
+<table id="releases" style="width:100%">
+   <caption align="bottom">This data is generated via Jira API and it refreshes automatically every day at 6.00AM</caption>
+
+  <tr>
+    <th>Release Name</th>
+    <th>Functionality Complete (FC)</th>
+    <th>Code Slush (CS)</th>
+    <th>Code Freeze (CF)</th>
+    <th>Intro date</th>
+  </tr>
+  
+</table>
+
+<script type="text/javascript">
+
+function searchStringInArray (str, strArray) {
+    for (var j=0; j<strArray.length; j++) {
+        if (strArray[j].includes(str)) return strArray[j];
+    }
+    return -1;
+}
+
+  for (var key in fixVersions) {
+    
+    var value = fixVersions[key];
+
+    var name = key;
+    var IDArray = searchStringInArray("ID:", value);
+    var FCArray = searchStringInArray("FC:", value);
+    var CFArray = searchStringInArray("CF:", value);
+    var CSArray = searchStringInArray("CS:", value);
+
+    var ID = IDArray.split("ID:")[1].replace(" ", "");
+    var FC = FCArray.split("FC:")[1].replace(" ", "");
+    var CF = CFArray.split("CF:")[1].replace(" ", "");
+    var CS = CSArray.split("CS:")[1].replace(" ", "");
+    
+    var tableRef = document.getElementById('releases');
+
+    // Insert a row in the table at row index n
+    var newRow   = tableRef.insertRow(tableRef.rows.length);
+
+    // Insert a cell in the row at index n
+    var newCell0  = newRow.insertCell(0);
+    var newCell1  = newRow.insertCell(1);
+    var newCell2  = newRow.insertCell(2);
+    var newCell3  = newRow.insertCell(3);
+    var newCell4  = newRow.insertCell(4);
+
+    var newText0  = document.createTextNode(name)
+    var newText1  = document.createTextNode(FC)
+    var newText2  = document.createTextNode(CS)
+    var newText3  = document.createTextNode(CF)
+    var newText4  = document.createTextNode(ID)
+
+    newCell0.appendChild(newText0);
+    newCell1.appendChild(newText1);  
+    newCell2.appendChild(newText2);
+    newCell3.appendChild(newText3);
+    newCell4.appendChild(newText4);
+
+  }
+    
+  
+
+</script>
+
